@@ -2,7 +2,7 @@
 <html>
 
 <body>
-    <h2>I learning Spring</h2>
+    <h2>Hi User, Have a good day</h2>
     <br>
     <br>
     <br>
