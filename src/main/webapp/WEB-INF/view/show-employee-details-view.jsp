@@ -9,8 +9,12 @@
 <html>
 
 <body>
-  <h1>Hello ${nameEmployee}</h1>
 
+Name : ${employee.name}
+<br><br>
+Surname: ${employee.surname}
+<br><br>
+Salary: ${employee.salary}
 
 </body>
 </html>

@@ -2,8 +2,8 @@ package com.alexdyuba.spring.mvc;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MyController {
@@ -14,13 +14,13 @@ public class MyController {
     }
 
     @RequestMapping("askDetails")
-    public String showFormForName() {
+    public String showFormForName(Model model) {
+        model.addAttribute("employee", new Employee());
         return "ask-employee-details-view";
     }
 
     @RequestMapping("showDetails")
-    public String showInfoAboutEmployee(@RequestParam("imployeeName") String name, Model model) {
-        model.addAttribute("nameEmployee", "Mr " + name);
+    public String showInfoAboutEmployee(@ModelAttribute(name = "employee") Employee employee) {
         return "show-employee-details-view";
     }
 }
