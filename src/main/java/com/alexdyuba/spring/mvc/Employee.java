@@ -11,6 +11,24 @@ public class Employee {
     private Map<String, String> departments;
     private String brandCar;
     private Map<String, String> brandCars;
+    private String[] languages;
+    private Map<String, String> containerLanguages;
+
+    public String[] getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(String[] languages) {
+        this.languages = languages;
+    }
+
+    public Map<String, String> getContainerLanguages() {
+        return containerLanguages;
+    }
+
+    public void setContainerLanguages(Map<String, String> containerLanguages) {
+        this.containerLanguages = containerLanguages;
+    }
 
     public Map<String, String> getDepartments() {
         return departments;
@@ -46,6 +64,11 @@ public class Employee {
         brandCars.put("BMW", "BMW");
         brandCars.put("Audi", "Audi");
         brandCars.put("Mercedes-Benz", "MB");
+
+        containerLanguages = new HashMap<>();
+        containerLanguages.put("English", "EN");
+        containerLanguages.put("Deutch", "DE");
+        containerLanguages.put("French", "FR");
     }
 
     public Employee(String name, String surname, int salary, String department) {
