@@ -14,3 +14,21 @@
 @Controller - 
 
 @RequestMapping - 
+
+@Size - 
+
+@NotNull - 
+
+@NotEmpty - 
+
+@NotBlank - 
+
+@Valid - 
+
+@Min - 
+
+@Max - 
+
+@Pattern - 
+
+### Forms
