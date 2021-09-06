@@ -1,10 +1,14 @@
 package com.alexdyuba.spring.mvc;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Employee {
+    @Size(min = 2, message = "YOUR NAME VERY SHORT")
     private String name;
+    @NotBlank(message = "Try again")
     private String surname;
     private int salary;
     private String department;
