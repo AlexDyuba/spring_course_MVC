@@ -29,5 +29,7 @@ Your languages
 
     </c:forEach>
 </ul>
+<br>
+Number phone ${employee.phone}
 </body>
 </html>

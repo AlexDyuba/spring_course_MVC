@@ -1,6 +1,7 @@
 package com.alexdyuba.spring.mvc;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,6 +18,8 @@ public class Employee {
     private Map<String, String> brandCars;
     private String[] languages;
     private Map<String, String> containerLanguages;
+    @Pattern(regexp = "375-\\d{2}-\\d{3}-\\d{2}-\\d{2}", message = "error number")
+    private String phone;
 
     public String[] getLanguages() {
         return languages;
@@ -112,6 +115,14 @@ public class Employee {
 
     public void setDepartment(String department) {
         this.department = department;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     @Override
