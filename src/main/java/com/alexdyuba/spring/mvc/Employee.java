@@ -1,8 +1,8 @@
 package com.alexdyuba.spring.mvc;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import com.alexdyuba.spring.mvc.validation.CheckEmail;
+
+import javax.validation.constraints.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,6 +11,8 @@ public class Employee {
     private String name;
     @NotBlank(message = "Try again")
     private String surname;
+    @Min(value = 950, message = "salary less < 950")
+    @Max(value = 3000, message = "salary more > 3500")
     private int salary;
     private String department;
     private Map<String, String> departments;
@@ -20,6 +22,8 @@ public class Employee {
     private Map<String, String> containerLanguages;
     @Pattern(regexp = "375-\\d{2}-\\d{3}-\\d{2}-\\d{2}", message = "error number")
     private String phone;
+    @CheckEmail
+    private String email;
 
     public String[] getLanguages() {
         return languages;
@@ -125,13 +129,11 @@ public class Employee {
         this.phone = phone;
     }
 
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", salary=" + salary +
-                ", department='" + department + '\'' +
-                '}';
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
